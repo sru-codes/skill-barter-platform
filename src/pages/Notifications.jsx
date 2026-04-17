@@ -35,7 +35,7 @@ export default function Notifications() {
 
   if (loading) return (
     <div className="py-20 flex justify-center">
-       <div className="w-10 h-10 border-4 border-indigo-600 border-t-transparent rounded-full animate-spin"></div>
+       <div className="w-10 h-10 border-4 border-blue-600 border-t-transparent rounded-full animate-spin"></div>
     </div>
   );
 
@@ -44,7 +44,7 @@ export default function Notifications() {
       
       <div className="mb-16">
         <h1 className="text-5xl md:text-7xl font-black text-white italic tracking-tighter mb-4 leading-none">
-          Notifications <span className="text-indigo-600">Feed</span>
+          Notifications <span className="text-blue-600">Feed</span>
         </h1>
         <p className="text-slate-500 font-black text-[10px] tracking-[0.4em] italic opacity-60">
           Stay updated with your skill requests and system alerts.
@@ -65,12 +65,12 @@ export default function Notifications() {
             <div 
               key={notif.id}
               onClick={() => !notif.read && markRead(notif.id)}
-              className={`bg-slate-900 border ${notif.read ? "border-slate-800 opacity-60" : "border-indigo-500/50 shadow-[0_0_30px_rgba(79,70,229,0.05)]"} p-8 md:p-10 rounded-[2.5rem] flex items-start gap-6 transition-all group cursor-pointer hover:bg-slate-800/50 relative overflow-hidden`}
+              className={`bg-slate-900 border ${notif.read ? "border-slate-800 opacity-60" : "border-blue-500/50 shadow-[0_0_30px_rgba(79,70,229,0.05)]"} p-8 md:p-10 rounded-[2.5rem] flex items-start gap-6 transition-all group cursor-pointer hover:bg-slate-800/50 relative overflow-hidden`}
             >
                <div className={`w-14 h-14 rounded-2xl flex items-center justify-center shrink-0 border transition-all 
                  ${notif.type === 'alert' ? "bg-red-600/10 text-red-500 border-red-500/20" : 
                    notif.type === 'success' ? "bg-emerald-500/10 text-emerald-500 border-emerald-500/20" : 
-                   "bg-indigo-600/10 text-indigo-500 border-indigo-600/20"}`}>
+                   "bg-blue-600/10 text-blue-500 border-blue-600/20"}`}>
                   {notif.type === 'alert' ? <AlertTriangle size={24} /> : 
                    notif.type === 'success' ? <Check size={24} /> : <Zap size={24} />}
                </div>
@@ -80,12 +80,12 @@ export default function Notifications() {
                      <p className="text-[9px] font-black text-slate-600 tracking-widest italic">{notif.category || "General"}</p>
                      <p className="text-[8px] font-black text-slate-700 tracking-widest italic">{notif.createdAt?.toDate().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</p>
                   </div>
-                  <h4 className="text-lg font-black text-white italic tracking-tighter mb-2 leading-none group-hover:text-indigo-400 transition-colors">{notif.title}</h4>
+                  <h4 className="text-lg font-black text-white italic tracking-tighter mb-2 leading-none group-hover:text-blue-400 transition-colors">{notif.title}</h4>
                   <p className="text-slate-500 text-xs font-black tracking-wider italic leading-relaxed opacity-80">{notif.message}</p>
                </div>
 
                {!notif.read && (
-                 <div className="absolute top-8 right-8 w-2 h-2 bg-indigo-500 rounded-full animate-pulse shadow-[0_0_8px_rgba(79,70,229,1)]"></div>
+                 <div className="absolute top-8 right-8 w-2 h-2 bg-blue-500 rounded-full animate-pulse shadow-[0_0_8px_rgba(79,70,229,1)]"></div>
                )}
             </div>
           ))}

@@ -24,8 +24,8 @@ export default function AIChat() {
       {/* Header */}
       <div className="p-6 border-b border-slate-800 bg-slate-900/80 flex items-center justify-between shrink-0">
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-xl bg-indigo-500/20 flex items-center justify-center border border-indigo-500/30">
-            <Sparkles className="w-6 h-6 text-indigo-400" />
+          <div className="w-10 h-10 rounded-xl bg-blue-500/20 flex items-center justify-center border border-blue-500/30">
+            <Sparkles className="w-6 h-6 text-blue-400" />
           </div>
           <div>
             <h2 className="text-xl font-bold text-white">Skill Assistant</h2>
@@ -59,8 +59,8 @@ export default function AIChat() {
               animate={{ opacity: 1, y: 0 }}
               className="flex flex-col items-center justify-center h-full text-center space-y-4 py-20"
             >
-              <div className="w-20 h-20 rounded-2xl bg-indigo-600/10 border border-indigo-500/20 flex items-center justify-center">
-                <Bot className="w-10 h-10 text-indigo-400" />
+              <div className="w-20 h-20 rounded-2xl bg-blue-600/10 border border-blue-500/20 flex items-center justify-center">
+                <Bot className="w-10 h-10 text-blue-400" />
               </div>
               <div className="max-w-xs">
                 <h3 className="text-lg font-black text-white uppercase italic tracking-tight">How can I help you?</h3>
@@ -82,19 +82,19 @@ export default function AIChat() {
                 {/* Avatar */}
                 <div className={`w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 ${
                   msg.role === "user"
-                    ? "bg-indigo-600"
+                    ? "bg-blue-600"
                     : "bg-slate-800 border border-slate-700"
                 }`}>
                   {msg.role === "user"
                     ? <User className="w-4 h-4 text-white" />
-                    : <Bot className="w-4 h-4 text-indigo-400" />
+                    : <Bot className="w-4 h-4 text-blue-400" />
                   }
                 </div>
 
                 {/* Bubble */}
                 <div className={`p-4 rounded-2xl text-sm leading-relaxed whitespace-pre-wrap break-words ${
                   msg.role === "user"
-                    ? "bg-indigo-600 text-white rounded-tr-none shadow-lg shadow-indigo-500/10"
+                    ? "bg-blue-600 text-white rounded-tr-none shadow-lg shadow-blue-500/10"
                     : "bg-slate-800/80 text-slate-200 border border-slate-700/50 rounded-tl-none"
                 }`}>
                   {msg.content}
@@ -112,13 +112,13 @@ export default function AIChat() {
             >
               <div className="flex gap-3">
                 <div className="w-8 h-8 rounded-lg bg-slate-800 border border-slate-700 flex items-center justify-center">
-                  <Bot className="w-4 h-4 text-indigo-400" />
+                  <Bot className="w-4 h-4 text-blue-400" />
                 </div>
                 <div className="p-4 rounded-2xl bg-slate-800/80 border border-slate-700/50 rounded-tl-none">
                   <div className="flex gap-1 items-center">
-                    <span className="w-2 h-2 bg-indigo-500 rounded-full animate-bounce [animation-delay:-0.3s]"></span>
-                    <span className="w-2 h-2 bg-indigo-500 rounded-full animate-bounce [animation-delay:-0.15s]"></span>
-                    <span className="w-2 h-2 bg-indigo-500 rounded-full animate-bounce"></span>
+                    <span className="w-2 h-2 bg-blue-500 rounded-full animate-bounce [animation-delay:-0.3s]"></span>
+                    <span className="w-2 h-2 bg-blue-500 rounded-full animate-bounce [animation-delay:-0.15s]"></span>
+                    <span className="w-2 h-2 bg-blue-500 rounded-full animate-bounce"></span>
                   </div>
                 </div>
               </div>
@@ -139,13 +139,13 @@ export default function AIChat() {
             value={input}
             onChange={(e) => setInput(e.target.value)}
             placeholder="Type your message here..."
-            className="w-full bg-slate-950 border border-slate-800 rounded-2xl py-4 pl-6 pr-16 text-slate-200 placeholder:text-slate-600 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 transition-all font-medium"
+            className="w-full bg-slate-950 border border-slate-800 rounded-2xl py-4 pl-6 pr-16 text-slate-200 placeholder:text-slate-600 focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all font-medium"
             disabled={loading}
           />
           <button
             type="submit"
             disabled={loading || !input.trim()}
-            className="absolute right-2 p-2.5 bg-indigo-600 text-white rounded-xl hover:bg-indigo-500 disabled:opacity-40 disabled:cursor-not-allowed transition-all shadow-lg shadow-indigo-600/20"
+            className="absolute right-2 p-2.5 bg-blue-600 text-white rounded-xl hover:bg-blue-500 disabled:opacity-40 disabled:cursor-not-allowed transition-all shadow-lg shadow-blue-600/20"
           >
             <Send className="w-5 h-5" />
           </button>

@@ -123,7 +123,7 @@ export default function SkillGrid() {
 
   if (loading) return (
      <div className="flex justify-center items-center h-[60vh]">
-        <div className="w-14 h-14 border-4 border-indigo-600 border-t-transparent rounded-full animate-spin"></div>
+        <div className="w-14 h-14 border-4 border-blue-600 border-t-transparent rounded-full animate-spin"></div>
      </div>
   );
 
@@ -134,8 +134,8 @@ export default function SkillGrid() {
       <div className="mb-12 animate-fade-in flex flex-col md:flex-row md:items-end justify-between gap-6">
         <div>
           <h1 className="text-4xl md:text-6xl font-black text-white italic tracking-tighter mb-4 flex items-center gap-3 leading-none">
-            <Zap className="text-indigo-600" size={48} />
-            Skill <span className="text-indigo-600">Marketplace</span>
+            <Zap className="text-blue-600" size={48} />
+            Skill <span className="text-blue-600">Marketplace</span>
           </h1>
           <p className="text-slate-500 font-bold text-xs uppercase tracking-[0.4em] italic pl-2">Discover top talent in the network</p>
         </div>
@@ -147,7 +147,7 @@ export default function SkillGrid() {
             placeholder="Search by skill or name..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="w-full bg-slate-900 border border-slate-800 focus:border-indigo-600 h-16 pl-16 pr-8 rounded-[2rem] text-sm font-black text-white italic tracking-widest placeholder:text-slate-700 outline-none transition-all shadow-inner focus:bg-slate-950"
+            className="w-full bg-slate-900 border border-slate-800 focus:border-blue-600 h-16 pl-16 pr-8 rounded-[2rem] text-sm font-black text-white italic tracking-widest placeholder:text-slate-700 outline-none transition-all shadow-inner focus:bg-slate-950"
           />
         </div>
       </div>
@@ -162,11 +162,11 @@ export default function SkillGrid() {
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
            {filteredUsers.map((u, i) => (
-             <div key={u.uid} className="bg-slate-900 border border-slate-800 rounded-[2.5rem] p-8 flex flex-col group hover:border-indigo-500/50 transition-all shadow-xl relative overflow-hidden animate-fade-in" style={{animationDelay: `${i*0.05}s`}}>
-               <div className="absolute top-0 right-0 w-32 h-32 bg-indigo-600/5 blur-[80px] -z-10 group-hover:bg-indigo-600/10 transition-colors"></div>
+             <div key={u.uid} className="bg-slate-900 border border-slate-800 rounded-[2.5rem] p-8 flex flex-col group hover:border-blue-500/50 transition-all shadow-xl relative overflow-hidden animate-fade-in" style={{animationDelay: `${i*0.05}s`}}>
+               <div className="absolute top-0 right-0 w-32 h-32 bg-blue-600/5 blur-[80px] -z-10 group-hover:bg-blue-600/10 transition-colors"></div>
                
                <div className="flex items-center gap-5 mb-8">
-                 <div className="w-16 h-16 rounded-2xl bg-slate-950 border-2 border-slate-800 p-0.5 flex-shrink-0 relative group-hover:border-indigo-500 transition-colors shadow-2xl">
+                 <div className="w-16 h-16 rounded-2xl bg-slate-950 border-2 border-slate-800 p-0.5 flex-shrink-0 relative group-hover:border-blue-500 transition-colors shadow-2xl">
                    {u.photo ? <img src={u.photo} className="w-full h-full object-cover rounded-[0.8rem]" /> : <User className="w-full h-full text-slate-700 p-2"/>}
                    {u.isOnline && <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-emerald-500 border-4 border-slate-900 rounded-full shadow-lg"></div>}
                  </div>
@@ -174,11 +174,11 @@ export default function SkillGrid() {
                    <h3 className="text-white font-black italic tracking-wider text-xl truncate leading-none mb-2">{u.name}</h3>
                    <div className="flex flex-col gap-1 mt-1">
                       <div className="flex items-center gap-1.5 text-slate-400 font-bold text-[10px] tracking-widest italic truncate max-w-[150px]">
-                         <Briefcase size={10} className="text-indigo-500 shrink-0" />
+                         <Briefcase size={10} className="text-blue-500 shrink-0" />
                          <span className="truncate">{u.workOrSchool || "GIET Baniatangi"}</span>
                       </div>
                       <div className="flex items-center gap-1.5 text-slate-500 uppercase text-[9px] font-black tracking-[0.2em] italic truncate max-w-[150px]">
-                         <MapPin size={10} className="text-indigo-500 shrink-0" />
+                         <MapPin size={10} className="text-blue-500 shrink-0" />
                          <span className="truncate">{u.location || "GLOBAL"}</span>
                       </div>
                    </div>
@@ -233,8 +233,8 @@ export default function SkillGrid() {
                   ) : <User className="w-full h-full text-slate-700 p-3" />}
                 </div>
                 <div>
-                   <h3 className="text-3xl font-black text-white italic tracking-tighter leading-none mb-2">Message <br/><span className="text-indigo-400">{selectedUser.name.split(' ')[0]}</span></h3>
-                   <p className="text-[10px] text-indigo-500/70 font-black italic tracking-widest uppercase">Propose a skill exchange</p>
+                   <h3 className="text-3xl font-black text-white italic tracking-tighter leading-none mb-2">Message <br/><span className="text-blue-400">{selectedUser.name.split(' ')[0]}</span></h3>
+                   <p className="text-[10px] text-blue-500/70 font-black italic tracking-widest uppercase">Propose a skill exchange</p>
                 </div>
               </div>
 
@@ -245,7 +245,7 @@ export default function SkillGrid() {
                    value={message}
                    onChange={e => setMessage(e.target.value)}
                    placeholder={`Hi ${selectedUser.name.split(' ')[0]}, I'd love to learn from you! I can teach...`}
-                   className="w-full bg-slate-950 border border-slate-800 focus:border-indigo-500 rounded-3xl h-36 p-6 text-sm font-bold text-white placeholder:text-slate-600 resize-none outline-none transition-all shadow-inner mb-10 italic leading-relaxed"
+                   className="w-full bg-slate-950 border border-slate-800 focus:border-blue-500 rounded-3xl h-36 p-6 text-sm font-bold text-white placeholder:text-slate-600 resize-none outline-none transition-all shadow-inner mb-10 italic leading-relaxed"
                  />
                   <div className="flex gap-4">
                     <button 

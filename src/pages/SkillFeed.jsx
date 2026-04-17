@@ -60,7 +60,7 @@ export default function SkillFeed() {
       <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-10 mb-16">
         <div className="animate-fade-in">
           <h1 className="text-5xl md:text-8xl font-black text-white italic tracking-tighter uppercase mb-6 leading-none">
-            Skill <span className="text-indigo-600">Grid</span>
+            Skill <span className="text-blue-600">Grid</span>
           </h1>
           <p className="text-slate-500 font-black text-[10px] uppercase tracking-[0.5em] italic opacity-60 max-w-xl leading-relaxed">
             Discover skills from other users and request to learn them today.
@@ -69,7 +69,7 @@ export default function SkillFeed() {
         
         <button 
           onClick={() => setShowModal(true)}
-          className="btn-primary flex items-center justify-center gap-4 px-12 h-20 text-[11px] font-black uppercase tracking-[0.3em] italic shadow-2xl shadow-indigo-600/40 shrink-0 group"
+          className="btn-primary flex items-center justify-center gap-4 px-12 h-20 text-[11px] font-black uppercase tracking-[0.3em] italic shadow-2xl shadow-blue-600/40 shrink-0 group"
         >
           <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center group-hover:rotate-90 transition-transform">
              <Plus size={18} />
@@ -81,7 +81,7 @@ export default function SkillFeed() {
       {/* Grid Controls */}
       <div className="mb-16 sticky top-6 z-40 bg-slate-950/80 backdrop-blur-xl p-4 rounded-[2.5rem] border border-slate-900 shadow-2xl">
          <div className="relative group">
-            <Search size={22} className="absolute left-8 top-1/2 -translate-y-1/2 text-slate-700 group-focus-within:text-indigo-600 transition-colors" />
+            <Search size={22} className="absolute left-8 top-1/2 -translate-y-1/2 text-slate-700 group-focus-within:text-blue-600 transition-colors" />
             <input 
               type="text" 
               value={search}
@@ -95,18 +95,18 @@ export default function SkillFeed() {
       {/* Feed Grid */}
       {loading ? (
         <div className="py-32 flex justify-center">
-           <div className="w-12 h-12 border-4 border-indigo-600 border-t-transparent rounded-full animate-spin"></div>
+           <div className="w-12 h-12 border-4 border-blue-600 border-t-transparent rounded-full animate-spin"></div>
         </div>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredPosts.map((post, i) => (
             <div key={post.id} 
-              className="bg-slate-900/50 backdrop-blur-xl border border-slate-800 rounded-[3rem] p-12 hover:border-indigo-600/50 transition-all group relative overflow-hidden shadow-2xl flex flex-col"
+              className="bg-slate-900/50 backdrop-blur-xl border border-slate-800 rounded-[3rem] p-12 hover:border-blue-600/50 transition-all group relative overflow-hidden shadow-2xl flex flex-col"
               style={{ animationDelay: `${i * 0.05}s` }}
             >
-               <div className="absolute -top-10 -right-10 w-32 h-32 bg-indigo-600/10 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
+               <div className="absolute -top-10 -right-10 w-32 h-32 bg-blue-600/10 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
                
-               <div className="w-auto px-6 h-14 bg-indigo-600 rounded-2xl inline-flex flex-none self-start items-center justify-center text-[10px] font-black mb-10 text-white italic tracking-widest shadow-2xl shadow-indigo-600/30 uppercase">
+               <div className="w-auto px-6 h-14 bg-blue-600 rounded-2xl inline-flex flex-none self-start items-center justify-center text-[10px] font-black mb-10 text-white italic tracking-widest shadow-2xl shadow-blue-600/30 uppercase">
                   {post.category || "Skill"}
                </div>
                
@@ -114,7 +114,7 @@ export default function SkillFeed() {
                
                <div className="mt-auto pt-8 flex items-center gap-3">
                  <div className="w-10 h-10 bg-slate-950 border border-slate-800 rounded-xl overflow-hidden flex items-center justify-center shrink-0">
-                    {post.userPhoto ? <img src={post.userPhoto} className="w-full h-full object-cover" /> : <User size={18} className="text-indigo-600" />}
+                    {post.userPhoto ? <img src={post.userPhoto} className="w-full h-full object-cover" /> : <User size={18} className="text-blue-600" />}
                  </div>
                  <p className="text-slate-500 text-sm leading-relaxed font-bold tracking-wider italic opacity-80 truncate">
                    {post.userName}
@@ -129,10 +129,10 @@ export default function SkillFeed() {
       {showModal && (
         <div className="fixed inset-0 z-[60] flex items-center justify-center p-6 bg-slate-950/90 backdrop-blur-xl">
           <div className="bg-slate-900 border border-slate-800 rounded-[3.5rem] p-10 md:p-14 max-w-xl w-full shadow-[0_0_100px_rgba(0,0,0,0.5)] relative overflow-hidden animate-fade-in">
-             <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-indigo-600 to-pink-600 opacity-50"></div>
+             <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-blue-600 to-pink-600 opacity-50"></div>
              
              <div className="flex justify-between items-center mb-12">
-                <h2 className="text-3xl font-black text-white italic tracking-tighter uppercase">Broadcast <span className="text-indigo-600">Protokol</span></h2>
+                <h2 className="text-3xl font-black text-white italic tracking-tighter uppercase">Broadcast <span className="text-blue-600">Protokol</span></h2>
                 <button onClick={() => setShowModal(false)} className="text-slate-700 hover:text-white transition-colors">
                    <X size={28} />
                 </button>
@@ -146,7 +146,7 @@ export default function SkillFeed() {
                        onClick={() => setType(t)}
                        className={`flex-1 py-4 rounded-xl text-[9px] font-black uppercase tracking-[0.2em] italic transition-all
                          ${type === t 
-                           ? (t === 'offering' ? "bg-indigo-600 text-white shadow-xl shadow-indigo-600/20" : "bg-pink-600 text-white shadow-xl shadow-pink-600/20") 
+                           ? (t === 'offering' ? "bg-blue-600 text-white shadow-xl shadow-blue-600/20" : "bg-pink-600 text-white shadow-xl shadow-pink-600/20") 
                            : "text-slate-700 hover:text-slate-500"}`}
                      >
                        {t === 'offering' ? 'Asset Projection' : 'Target Acquisition'}
@@ -155,7 +155,7 @@ export default function SkillFeed() {
                 </div>
 
                 <div className="space-y-3">
-                   <label className="text-[9px] font-black text-slate-600 uppercase tracking-widest italic ml-1 flex items-center gap-2"><Tag size={10} className="text-indigo-600" /> Sector Selection</label>
+                   <label className="text-[9px] font-black text-slate-600 uppercase tracking-widest italic ml-1 flex items-center gap-2"><Tag size={10} className="text-blue-600" /> Sector Selection</label>
                    <select 
                      value={category}
                      onChange={e => setCategory(e.target.value)}
@@ -166,7 +166,7 @@ export default function SkillFeed() {
                 </div>
 
                 <div className="space-y-3">
-                   <label className="text-[9px] font-black text-slate-600 uppercase tracking-widest italic ml-1 flex items-center gap-2"><Rocket size={10} className="text-indigo-600" /> Signal Title</label>
+                   <label className="text-[9px] font-black text-slate-600 uppercase tracking-widest italic ml-1 flex items-center gap-2"><Rocket size={10} className="text-blue-600" /> Signal Title</label>
                    <input 
                      type="text"
                      value={title}
@@ -177,7 +177,7 @@ export default function SkillFeed() {
                 </div>
 
                 <div className="space-y-3">
-                   <label className="text-[9px] font-black text-slate-600 uppercase tracking-widest italic ml-1 flex items-center gap-2"><Sparkles size={10} className="text-indigo-600" /> Data Parameters (Description)</label>
+                   <label className="text-[9px] font-black text-slate-600 uppercase tracking-widest italic ml-1 flex items-center gap-2"><Sparkles size={10} className="text-blue-600" /> Data Parameters (Description)</label>
                    <textarea 
                      value={description}
                      onChange={e => setDescription(e.target.value)}
@@ -189,7 +189,7 @@ export default function SkillFeed() {
                 <button 
                   onClick={handlePost}
                   disabled={submitting}
-                  className="btn-primary w-full h-20 text-[11px] font-black uppercase tracking-[0.4em] italic shadow-2xl shadow-indigo-600/40"
+                  className="btn-primary w-full h-20 text-[11px] font-black uppercase tracking-[0.4em] italic shadow-2xl shadow-blue-600/40"
                 >
                   {submitting ? "TRANSMITTING TO GRID..." : "INITIALIZE BROADCAST"}
                 </button>

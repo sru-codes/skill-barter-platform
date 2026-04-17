@@ -51,14 +51,14 @@ export default function Layout({ children, user }) {
   };
 
   return (
-    <div className="min-h-screen bg-slate-950 flex flex-col font-sans selection:bg-indigo-500/30">
+    <div className="min-h-screen bg-slate-950 flex flex-col font-sans selection:bg-blue-500/30">
 
       {/* ── Logout Confirmation Modal ── */}
       {showLogoutModal && (
         <div className="fixed inset-0 z-[200] flex items-center justify-center bg-slate-950/80 backdrop-blur-md">
-          <div className="bg-slate-900 border border-slate-800 rounded-[2.5rem] p-12 max-w-sm w-full mx-6 shadow-2xl shadow-indigo-600/10 text-center animate-fade-in">
+          <div className="bg-slate-900 border border-slate-800 rounded-[2.5rem] p-12 max-w-sm w-full mx-6 shadow-2xl shadow-blue-600/10 text-center animate-fade-in">
             <div className="w-16 h-16 bg-slate-800 border border-slate-700 rounded-2xl flex items-center justify-center mx-auto mb-8 shadow-inner">
-              <LogOut size={32} className="text-slate-400 group-hover:text-indigo-400 transition-colors" />
+              <LogOut size={32} className="text-slate-400 group-hover:text-blue-400 transition-colors" />
             </div>
             <h3 className="text-2xl font-black text-white italic tracking-tighter mb-3">
               Log Out?
@@ -85,7 +85,7 @@ export default function Layout({ children, user }) {
       )}
 
       {/* Sticky Top Navbar */}
-      <header className="sticky top-0 z-[60] w-full h-20 px-6 md:px-12 flex justify-between items-center bg-slate-950/80 backdrop-blur-2xl border-b border-slate-900 shadow-2xl shadow-indigo-500/5">
+      <header className="sticky top-0 z-[60] w-full h-20 px-6 md:px-12 flex justify-between items-center bg-slate-950/80 backdrop-blur-2xl border-b border-slate-900 shadow-2xl shadow-blue-500/5">
         <div className="flex items-center gap-4 cursor-pointer group" onClick={() => navigate("/")}>
           <div className="flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
             <Logo size={40} />
@@ -102,11 +102,11 @@ export default function Layout({ children, user }) {
         {/* Mobile Header Right */}
         <div className="md:hidden flex items-center gap-4">
            {user && (
-             <button onClick={() => navigate("/settings")} className="w-10 h-10 rounded-xl border border-slate-800 overflow-hidden cursor-pointer bg-slate-900 p-0.5 shadow-lg shadow-indigo-600/10">
+             <button onClick={() => navigate("/settings")} className="w-10 h-10 rounded-xl border border-slate-800 overflow-hidden cursor-pointer bg-slate-900 p-0.5 shadow-lg shadow-blue-600/10">
                {user.photoURL ? (
                  <img src={user.photoURL} className="w-full h-full object-cover rounded-[0.5rem]" />
                ) : (
-                 <div className="w-full h-full bg-slate-950 flex items-center justify-center text-indigo-500"><User size={18} /></div>
+                 <div className="w-full h-full bg-slate-950 flex items-center justify-center text-blue-500"><User size={18} /></div>
                )}
              </button>
            )}

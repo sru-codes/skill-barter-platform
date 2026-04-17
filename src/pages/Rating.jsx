@@ -65,22 +65,22 @@ export default function Rating() {
         {/* Left: Summary */}
         <div className="space-y-10">
           <div className="bg-slate-900 border border-slate-800 rounded-[3rem] p-12 relative overflow-hidden shadow-2xl">
-             <div className="absolute top-0 right-0 w-48 h-48 bg-indigo-600/5 blur-[80px] -z-10"></div>
+             <div className="absolute top-0 right-0 w-48 h-48 bg-blue-600/5 blur-[80px] -z-10"></div>
              <div className="w-24 h-24 bg-slate-950 border-2 border-slate-800 rounded-3xl flex items-center justify-center mb-8 shadow-inner overflow-hidden">
                 {partner?.photo ? (
                   <img src={partner.photo} className="w-full h-full object-cover" />
                 ) : (
-                  <BadgeCheck size={48} className="text-indigo-600/40" />
+                  <BadgeCheck size={48} className="text-blue-600/40" />
                 )}
              </div>
-             <p className="text-indigo-500 font-black text-[10px] uppercase tracking-[0.4em] mb-4 italic">COMPLETED EXCHANGE</p>
+             <p className="text-blue-500 font-black text-[10px] uppercase tracking-[0.4em] mb-4 italic">COMPLETED EXCHANGE</p>
              <h1 className="text-4xl md:text-5xl font-black text-white italic tracking-tighter uppercase leading-none mb-6">VALIDATE <br /> {targetName}</h1>
              <p className="text-slate-500 font-black text-[11px] uppercase tracking-widest leading-relaxed opacity-60">Record the data quality and expertise delivered during this barter cycle.</p>
           </div>
 
           <div className="grid grid-cols-2 gap-6">
              <div className="bg-slate-900/50 border border-slate-800 rounded-2xl p-6 text-center">
-                <Rocket size={20} className="text-indigo-600 mx-auto mb-4" />
+                <Rocket size={20} className="text-blue-600 mx-auto mb-4" />
                 <p className="text-[9px] font-black text-slate-700 uppercase tracking-widest mb-1 italic">Mastery Rank</p>
                 <p className="text-white font-black uppercase italic tracking-tighter">ELITE NODE</p>
              </div>
@@ -105,10 +105,10 @@ export default function Rating() {
                   >
                     <Star 
                       fill={rating >= s ? "currentColor" : "none"} 
-                      className={`w-10 h-10 transition-all ${rating >= s ? "text-indigo-600 scale-125" : "text-slate-800 group-hover:text-slate-600"}`} 
+                      className={`w-10 h-10 transition-all ${rating >= s ? "text-blue-600 scale-125" : "text-slate-800 group-hover:text-slate-600"}`} 
                       strokeWidth={2.5} 
                     />
-                    {rating === s && <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-indigo-600 rounded-full shadow-[0_0_8px_rgba(79,70,229,1)]"></div>}
+                    {rating === s && <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-blue-600 rounded-full shadow-[0_0_8px_rgba(79,70,229,1)]"></div>}
                   </button>
                 ))}
               </div>
@@ -127,7 +127,7 @@ export default function Rating() {
            <button 
              onClick={handleSubmit}
              disabled={sending}
-             className="btn-primary w-full h-20 text-[11px] font-black uppercase tracking-[0.4em] italic shadow-2xl shadow-indigo-600/40 active:scale-95 transition-all"
+             className="btn-primary w-full h-20 text-[11px] font-black uppercase tracking-[0.4em] italic shadow-2xl shadow-blue-600/40 active:scale-95 transition-all"
            >
              {sending ? "TRANSMITTING TO GRID..." : "COMMIT VALIDATION LOG"}
            </button>

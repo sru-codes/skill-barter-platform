@@ -91,21 +91,21 @@ export default function Profile({ user }) {
       
       {/* Background Decor */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none -z-10 group">
-         <div className="absolute top-[10%] left-[10%] w-[500px] h-[500px] bg-indigo-600/10 blur-[140px] rounded-full animate-pulse"></div>
+         <div className="absolute top-[10%] left-[10%] w-[500px] h-[500px] bg-blue-600/10 blur-[140px] rounded-full animate-pulse"></div>
          <div className="absolute bottom-[10%] right-[10%] w-[500px] h-[500px] bg-pink-600/5 blur-[140px] rounded-full animate-pulse delay-700"></div>
       </div>
 
       <div className="w-full max-w-2xl animate-fade-in py-12">
         <div className="bg-slate-900 border border-slate-800 rounded-[3rem] p-8 md:p-14 shadow-2xl relative overflow-hidden">
-          <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-indigo-600 via-indigo-500 to-pink-600"></div>
+          <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-blue-600 via-blue-500 to-pink-600"></div>
           
           <header className="text-center mb-14">
              <div className="relative inline-block mb-8">
-                <div className="absolute inset-0 bg-indigo-500 blur-3xl opacity-20 group-hover:opacity-40 transition-opacity"></div>
+                <div className="absolute inset-0 bg-blue-500 blur-3xl opacity-20 group-hover:opacity-40 transition-opacity"></div>
                 {user.photoURL ? (
                   <img src={user.photoURL} alt="avatar" className="relative w-28 h-28 rounded-3xl mx-auto border-2 border-slate-800 shadow-2xl object-cover p-1 bg-slate-950" />
                 ) : (
-                  <div className="relative w-28 h-28 rounded-3xl mx-auto bg-slate-950 flex items-center justify-center text-4xl text-indigo-400 font-black border border-slate-800 shadow-2xl">
+                  <div className="relative w-28 h-28 rounded-3xl mx-auto bg-slate-950 flex items-center justify-center text-4xl text-blue-400 font-black border border-slate-800 shadow-2xl">
                     {(user.displayName || user.email || "U")[0].toUpperCase()}
                   </div>
                 )}
@@ -121,12 +121,12 @@ export default function Profile({ user }) {
                <div className="space-y-3">
                   <label className="text-xs font-bold text-slate-500 italic flex items-center justify-between">
                       <span className="flex items-center gap-2">
-                        <MapPin size={12} className="text-indigo-600" /> Your Location
+                        <MapPin size={12} className="text-blue-600" /> Your Location
                       </span>
                       <button 
                         onClick={getLocation}
                         type="button"
-                        className="text-[10px] text-indigo-500 hover:text-white transition-colors flex items-center gap-1 bg-indigo-600/10 px-2 py-1 rounded-lg border border-indigo-600/20 active:scale-95"
+                        className="text-[10px] text-blue-500 hover:text-white transition-colors flex items-center gap-1 bg-blue-600/10 px-2 py-1 rounded-lg border border-blue-600/20 active:scale-95"
                       >
                          📍 Get Current Location
                       </button>
@@ -144,7 +144,7 @@ export default function Profile({ user }) {
                </div>
                <div className="space-y-3">
                   <label className="text-xs font-bold text-slate-500 italic flex items-center gap-2">
-                      <Award size={12} className="text-indigo-600" /> Skill Level
+                      <Award size={12} className="text-blue-600" /> Skill Level
                   </label>
                   <div className="relative">
                     <Award className="absolute left-5 top-1/2 -translate-y-1/2 text-slate-700" size={18} />
@@ -179,10 +179,10 @@ export default function Profile({ user }) {
             <button 
               onClick={() => { setNoSkills(!noSkills); if (!noSkills) { setOffering([]); setExperience("Beginner"); } }}
               className={`w-full p-6 rounded-2xl border transition-all flex items-center justify-between group overflow-hidden relative
-                ${noSkills ? 'bg-indigo-600/5 border-indigo-500/50' : 'bg-slate-950 border-slate-800 hover:border-slate-700'}`}
+                ${noSkills ? 'bg-blue-600/5 border-blue-500/50' : 'bg-slate-950 border-slate-800 hover:border-slate-700'}`}
             >
                <div className="flex items-center gap-5 text-left relative z-10">
-                  <div className={`w-12 h-12 rounded-xl flex items-center justify-center transition-all ${noSkills ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-600/30' : 'bg-slate-900 text-slate-700 border border-slate-800'}`}>
+                  <div className={`w-12 h-12 rounded-xl flex items-center justify-center transition-all ${noSkills ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/30' : 'bg-slate-900 text-slate-700 border border-slate-800'}`}>
                     <GraduationCap size={24} />
                   </div>
                   <div>
@@ -190,7 +190,7 @@ export default function Profile({ user }) {
                     <p className="text-[9px] text-slate-500 uppercase tracking-widest font-black italic opacity-60">I am here to learn and don't have skills to offer yet.</p>
                   </div>
                </div>
-               <div className={`w-8 h-8 rounded-xl flex items-center justify-center border-2 transition-all relative z-10 ${noSkills ? 'bg-indigo-600 border-indigo-400 text-white' : 'bg-slate-900 border-slate-800 text-transparent'}`}>
+               <div className={`w-8 h-8 rounded-xl flex items-center justify-center border-2 transition-all relative z-10 ${noSkills ? 'bg-blue-600 border-blue-400 text-white' : 'bg-slate-900 border-slate-800 text-transparent'}`}>
                   <Check size={16} strokeWidth={4} />
                </div>
             </button>
@@ -199,7 +199,7 @@ export default function Profile({ user }) {
             {!noSkills && (
               <div className="animate-fade-in p-8 rounded-2xl bg-slate-950 border border-slate-800">
                 <div className="flex items-center gap-3 mb-6 text-white">
-                   <div className="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center shadow-lg shadow-indigo-600/20">
+                   <div className="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center shadow-lg shadow-blue-600/20">
                       <BookOpen size={20} />
                    </div>
                    <h3 className="text-lg font-black uppercase italic tracking-tighter">Skills I can teach</h3>
@@ -207,7 +207,7 @@ export default function Profile({ user }) {
                 <SkillPicker 
                   selected={offering} 
                   onToggle={(s) => toggleSkill(s, offering, setOffering)} 
-                  color="indigo" 
+                  color="blue" 
                 />
               </div>
             )}
@@ -223,7 +223,7 @@ export default function Profile({ user }) {
               <SkillPicker 
                 selected={wanting} 
                 onToggle={(s) => toggleSkill(s, wanting, setWanting)} 
-                color="indigo" 
+                color="blue" 
               />
             </div>
 
@@ -232,7 +232,7 @@ export default function Profile({ user }) {
                <button 
                  onClick={handleSave} 
                  disabled={saving}
-                 className="w-full btn-primary h-20 flex items-center justify-center gap-4 text-sm font-black uppercase tracking-[0.3em] italic shadow-2xl shadow-indigo-600/40"
+                 className="w-full btn-primary h-20 flex items-center justify-center gap-4 text-sm font-black uppercase tracking-[0.3em] italic shadow-2xl shadow-blue-600/40"
                >
                   {saving ? "Setting up..." : "Go to Dashboard"}
                   <ArrowRight size={20} strokeWidth={3} />
