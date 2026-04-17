@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { db, auth } from "../firebase";
 import { collection, onSnapshot, query, orderBy, addDoc, serverTimestamp, getDocs, where } from "firebase/firestore";
-import { Plus, Search, Tag, User, MessageSquare, Handshake, Share2, Sparkles, Filter, Rocket, Heart } from "lucide-react";
+import { Plus, Search, Tag, User, MessageSquare, Handshake, Share2, Sparkles, Filter, Rocket, Heart, X } from "lucide-react";
 
 export default function SkillFeed() {
   const [posts, setPosts] = useState([]);
