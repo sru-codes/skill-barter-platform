@@ -34,7 +34,7 @@ async function getAIMatch(currentUser, matchUser) {
       score: result?.score || 75
     };
   } catch (err) {
-    console.error("Neural Match Error:", err);
+    console.error("AI Match Error:", err);
     return { reason: "Exceptional synergy potential.", score: 80 };
   }
 }

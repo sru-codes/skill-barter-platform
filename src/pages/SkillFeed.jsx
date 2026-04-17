@@ -74,7 +74,7 @@ export default function SkillFeed() {
           <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center group-hover:rotate-90 transition-transform">
              <Plus size={18} />
           </div>
-          Broadcast Skill
+          Post a Skill
         </button>
       </div>
 
@@ -171,7 +171,7 @@ export default function SkillFeed() {
                      type="text"
                      value={title}
                      onChange={e => setTitle(e.target.value)}
-                     placeholder="E.G. ADVANCED NEURAL NETWORKS MASTERY"
+                     placeholder="e.g. Python Programming ya Web Design"
                      className="input-field w-full h-16 px-6 font-black text-xs italic uppercase tracking-[0.1em]"
                    />
                 </div>
@@ -181,7 +181,7 @@ export default function SkillFeed() {
                    <textarea 
                      value={description}
                      onChange={e => setDescription(e.target.value)}
-                     placeholder="DEFINE THE EFFICACY AND DEPTH OF YOUR KNOWLEDGE ASSET..."
+                     placeholder="Describe karo ki tum kya sikha sakte ho ya kya sikhna chahte ho..."
                      className="input-field w-full min-h-[140px] resize-none py-6 px-6 font-black text-xs italic uppercase tracking-wider leading-relaxed"
                    />
                 </div>

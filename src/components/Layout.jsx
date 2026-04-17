@@ -34,12 +34,12 @@ export default function Layout({ children, user }) {
 
   const navLinks = [
     { name: "Dashboard", path: "/dashboard", icon: LayoutDashboard },
-    { name: "Skill Grid", path: "/skill-grid", icon: Search },
+    { name: "Discover Skills", path: "/skill-grid", icon: Search },
     { name: "Requests", path: "/requests", icon: Handshake },
     { name: "Notifications", path: "/notifications", icon: Bell },
     { name: "Chats", path: "/chat", icon: MessageSquare },
     { name: "Feed", path: "/feed", icon: Radio },
-    { name: "Rankings", path: "/leaderboard", icon: Trophy },
+    { name: "Leaderboard", path: "/leaderboard", icon: Trophy },
     { name: "Settings", path: "/settings", icon: Settings },
     { name: "AI Chat", path: "/ai-chat", icon: Sparkles },
   ];
