@@ -1,0 +1,141 @@
+@import "tailwindcss";
+
+@theme {
+  --color-accent: #4f46e5;
+  --color-secondary: #db2777;
+  --color-bg-main: #0f172a;
+  --color-card-bg: #0f1729;
+  --color-border-primary: #1e293b;
+}
+
+@layer base {
+  :root {
+    --accent: #4f46e5;
+    --secondary: #db2777;
+    --bg-main: #0f172a;
+    --card-bg: #0f1729;
+    --border-color: #1e293b;
+  }
+
+  body {
+    @apply bg-slate-950 text-slate-100 selection:bg-indigo-500/30;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    letter-spacing: -0.01em;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-black tracking-tighter italic;
+  }
+}
+
+@layer components {
+  /* Ultra-Premium Glassmorphism */
+  .glass {
+    @apply bg-slate-950/80 backdrop-blur-2xl border-b border-slate-800 shadow-2xl shadow-indigo-500/5;
+  }
+  
+  .glass-card {
+    @apply bg-slate-900/40 border border-slate-800 rounded-[2.5rem] p-10 transition-all duration-500 hover:border-indigo-500/30 hover:shadow-2xl hover:shadow-indigo-500/5;
+  }
+
+  /* Command Actions */
+  .btn-primary {
+    @apply bg-blue-600 hover:bg-blue-500 text-white font-black py-4 px-8 rounded-2xl transition-all shadow-2xl shadow-blue-600/30 active:scale-[0.98] disabled:opacity-20 tracking-[0.2em] italic text-[11px] border border-blue-400/20;
+  }
+
+  .btn-secondary {
+    @apply bg-slate-900 hover:bg-slate-800 text-slate-400 hover:text-white font-black py-4 px-8 rounded-2xl transition-all active:scale-[0.98] border border-slate-800 tracking-[0.2em] italic text-[10px];
+  }
+
+  .btn-danger {
+    @apply bg-red-950/20 hover:bg-red-600 text-red-500 hover:text-white font-black py-4 px-8 rounded-2xl transition-all border border-red-500/20 tracking-[0.2em] italic text-[10px];
+  }
+
+  /* Data Indicators */
+  .badge-offering {
+    @apply bg-blue-600/10 text-blue-400 border border-blue-600/20 px-4 py-2 rounded-xl text-[9px] font-black tracking-[0.2em] italic;
+  }
+
+  .badge-wanting {
+    @apply bg-pink-600/10 text-pink-400 border border-pink-600/20 px-4 py-2 rounded-xl text-[9px] font-black tracking-[0.2em] italic;
+  }
+
+  /* Neural Inputs */
+  .input-field {
+    @apply bg-slate-950 border border-slate-800 rounded-2xl px-6 py-4 focus:outline-none focus:ring-2 focus:ring-indigo-600/50 focus:border-indigo-500 transition-all text-sm font-bold tracking-widest placeholder:text-slate-700 shadow-inner;
+  }
+
+  /* Spectral Scan Utility */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* Temporal Dynamics (Animations) */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes spectralScan {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-scan {
+  position: relative;
+  overflow: hidden;
+}
+
+.animate-scan::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(79, 70, 229, 0.1), transparent);
+  animation: spectralScan 2s infinite linear;
+}
+
+/* Custom Tactical Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #4f46e5;
+  box-shadow: 0 0 15px rgba(79, 70, 229, 0.4);
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  height: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.8);
+  border-radius: 20px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: linear-gradient(to right, #4f46e5, #6366f1);
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(79, 70, 229, 0.3);
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #6366f1;
+}
