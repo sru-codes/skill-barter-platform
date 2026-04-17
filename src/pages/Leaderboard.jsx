@@ -33,10 +33,10 @@ export default function Leaderboard() {
            </div>
         </div>
         <h1 className="text-5xl md:text-8xl font-black text-white italic tracking-tighter uppercase mb-6 leading-none">
-          Mastery <span className="text-blue-600">Ranks</span>
+          Community <span className="text-blue-600">Leaderboard</span>
         </h1>
         <p className="text-slate-500 font-black text-[10px] uppercase tracking-[0.5em] italic opacity-60 max-w-lg mx-auto leading-relaxed">
-          The grid's most efficient knowledge nodes, ranked by neural validation and sync frequency.
+          Recognizing our top skill traders based on community ratings and successful exchanges.
         </p>
       </div>
 
@@ -72,12 +72,12 @@ export default function Leaderboard() {
                   <h3 className="text-xl md:text-2xl font-black text-white italic tracking-tighter uppercase truncate group-hover:text-blue-400 transition-colors leading-none mb-2">{leader.name}</h3>
                   <div className="flex flex-wrap gap-4 items-center">
                      <span className="text-[9px] font-black text-slate-700 uppercase tracking-widest italic flex items-center gap-2">
-                        <Rocket size={12} className="text-blue-600" /> {leader.experience || "INTERMEDIATE"} TIER
+                        <Rocket size={12} className="text-blue-600" /> {leader.experience || "Intermediate"} Level
                      </span>
                      <div className="flex items-center gap-2 bg-slate-950 px-4 py-2 rounded-xl border border-slate-800 shadow-inner">
                         <Star size={12} fill="currentColor" className="text-yellow-500" />
                         <span className="text-[10px] font-black text-white italic tracking-tighter">{leader.rating?.toFixed(1) || "5.0"}</span>
-                        <span className="text-[8px] font-black text-slate-700 uppercase tracking-widest italic ml-1 opacity-50">/{leader.ratingCount || 0} LOGS</span>
+                        <span className="text-[8px] font-black text-slate-700 uppercase tracking-widest italic ml-1 opacity-50">/{leader.ratingCount || 0} Reviews</span>
                      </div>
                   </div>
                </div>
@@ -107,7 +107,7 @@ export default function Leaderboard() {
          <div className="absolute inset-0 bg-blue-600/2 opacity-0 group-hover:opacity-100 transition-opacity"></div>
          <Sparkles className="text-blue-600/20 mx-auto mb-6" size={40} />
          <p className="text-[10px] font-black text-slate-700 uppercase tracking-[0.5em] italic leading-relaxed">
-           ELEVATE YOUR MASTERY STATUS BY COMPLETING <br /> SUCCESSFUL BARTER CYCLES IN THE GRID.
+           RISE UP THE RANKS BY COMPLETING SUCCESSFUL TRADES AND EARNING TOP RATINGS.
          </p>
       </div>
 

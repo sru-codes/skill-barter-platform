@@ -60,10 +60,10 @@ export default function SkillFeed() {
       <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-10 mb-16">
         <div className="animate-fade-in">
           <h1 className="text-5xl md:text-8xl font-black text-white italic tracking-tighter uppercase mb-6 leading-none">
-            Skill <span className="text-blue-600">Grid</span>
+            Discover <span className="text-blue-600">Skills</span>
           </h1>
           <p className="text-slate-500 font-black text-[10px] uppercase tracking-[0.5em] italic opacity-60 max-w-xl leading-relaxed">
-            Discover skills from other users and request to learn them today.
+            Find the perfect skill trade and connect with experts today.
           </p>
         </div>
         
@@ -132,7 +132,7 @@ export default function SkillFeed() {
              <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-blue-600 to-pink-600 opacity-50"></div>
              
              <div className="flex justify-between items-center mb-12">
-                <h2 className="text-3xl font-black text-white italic tracking-tighter uppercase">Broadcast <span className="text-blue-600">Protokol</span></h2>
+                <h2 className="text-3xl font-black text-white italic tracking-tighter uppercase">Post a <span className="text-blue-600">Skill</span></h2>
                 <button onClick={() => setShowModal(false)} className="text-slate-700 hover:text-white transition-colors">
                    <X size={28} />
                 </button>
@@ -149,13 +149,13 @@ export default function SkillFeed() {
                            ? (t === 'offering' ? "bg-blue-600 text-white shadow-xl shadow-blue-600/20" : "bg-pink-600 text-white shadow-xl shadow-pink-600/20") 
                            : "text-slate-700 hover:text-slate-500"}`}
                      >
-                       {t === 'offering' ? 'Asset Projection' : 'Target Acquisition'}
+                       {t === 'offering' ? 'I am Offering' : 'I am Looking For'}
                      </button>
                    ))}
                 </div>
 
                 <div className="space-y-3">
-                   <label className="text-[9px] font-black text-slate-600 uppercase tracking-widest italic ml-1 flex items-center gap-2"><Tag size={10} className="text-blue-600" /> Sector Selection</label>
+                   <label className="text-[9px] font-black text-slate-600 uppercase tracking-widest italic ml-1 flex items-center gap-2"><Tag size={10} className="text-blue-600" /> Category</label>
                    <select 
                      value={category}
                      onChange={e => setCategory(e.target.value)}
@@ -166,7 +166,7 @@ export default function SkillFeed() {
                 </div>
 
                 <div className="space-y-3">
-                   <label className="text-[9px] font-black text-slate-600 uppercase tracking-widest italic ml-1 flex items-center gap-2"><Rocket size={10} className="text-blue-600" /> Signal Title</label>
+                   <label className="text-[9px] font-black text-slate-600 uppercase tracking-widest italic ml-1 flex items-center gap-2"><Rocket size={10} className="text-blue-600" /> Title</label>
                    <input 
                      type="text"
                      value={title}
@@ -177,7 +177,7 @@ export default function SkillFeed() {
                 </div>
 
                 <div className="space-y-3">
-                   <label className="text-[9px] font-black text-slate-600 uppercase tracking-widest italic ml-1 flex items-center gap-2"><Sparkles size={10} className="text-blue-600" /> Data Parameters (Description)</label>
+                   <label className="text-[9px] font-black text-slate-600 uppercase tracking-widest italic ml-1 flex items-center gap-2"><Sparkles size={10} className="text-blue-600" /> Description</label>
                    <textarea 
                      value={description}
                      onChange={e => setDescription(e.target.value)}
@@ -191,7 +191,7 @@ export default function SkillFeed() {
                   disabled={submitting}
                   className="btn-primary w-full h-20 text-[11px] font-black uppercase tracking-[0.4em] italic shadow-2xl shadow-blue-600/40"
                 >
-                  {submitting ? "TRANSMITTING TO GRID..." : "INITIALIZE BROADCAST"}
+                  {submitting ? "POSTING..." : "POST NOW"}
                 </button>
              </div>
           </div>
