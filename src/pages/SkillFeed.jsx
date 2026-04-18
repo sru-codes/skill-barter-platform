@@ -181,7 +181,7 @@ export default function SkillFeed() {
                    <textarea 
                      value={description}
                      onChange={e => setDescription(e.target.value)}
-                     placeholder="Describe what you want to teach or learn..."
+                     placeholder="Describe what you want to teach or learn in simple words..."
                      className="input-field w-full min-h-[140px] resize-none py-6 px-6 font-black text-xs italic uppercase tracking-wider leading-relaxed"
                    />
                 </div>

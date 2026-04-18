@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import React, { useState, useEffect, useContext } from "react";
 import { auth, db, messaging } from "./firebase";
 import { onAuthStateChanged } from "firebase/auth";
-import { doc, getDoc, updateDoc } from "firebase/firestore";
+import { doc, getDoc, updateDoc, onSnapshot } from "firebase/firestore";
 import { getToken, onMessage } from "firebase/messaging";
 import { GeminiContext } from './context/GeminiContext';
 
@@ -32,35 +32,52 @@ function App() {
   const gemini = useContext(GeminiContext);
 
   useEffect(() => {
-    const unsub = onAuthStateChanged(auth, async (currentUser) => {
+    const unsubAuth = onAuthStateChanged(auth, async (currentUser) => {
       setUser(currentUser);
-      if (currentUser) {
-        const snap = await getDoc(doc(db, "users", currentUser.uid));
-        setHasProfile(snap.exists());
-
-        try {
-          if ('Notification' in window) {
-            const permission = await Notification.requestPermission();
-            if (permission === 'granted') {
-              const token = await getToken(messaging, { 
-                vapidKey: 'BMD-zN1_H_7eK2v1-Jb3X9z-j-MBy4Jp-zE8vM-j-I' 
-              });
-              if (token) await updateDoc(doc(db, "users", currentUser.uid), { fcmToken: token });
-            }
-          }
-        } catch (err) { console.warn("Notifications setup failed", err); }
-      } else {
+      if (!currentUser) {
         setHasProfile(false);
+        setLoading(false);
       }
-      setLoading(false);
     });
 
     const unsubMsg = onMessage(messaging, (payload) => {
       alert(`🔔 ${payload.notification.title}: ${payload.notification.body}`);
     });
 
-    return () => { unsub(); unsubMsg(); };
+    return () => {
+      unsubAuth();
+      unsubMsg();
+    };
   }, []);
+
+  useEffect(() => {
+    if (!user) return;
+
+    const unsubProfile = onSnapshot(doc(db, "users", user.uid), (snap) => {
+      setHasProfile(snap.exists());
+      setLoading(false);
+
+      if (snap.exists()) {
+        setupNotifications(user.uid);
+      }
+    });
+
+    return () => unsubProfile();
+  }, [user]);
+
+  const setupNotifications = async (uid) => {
+    try {
+      if ('Notification' in window) {
+        const permission = await Notification.requestPermission();
+        if (permission === 'granted') {
+          const token = await getToken(messaging, { 
+            vapidKey: 'BMD-zN1_H_7eK2v1-Jb3X9z-j-MBy4Jp-zE8vM-j-I' 
+          });
+          if (token) await updateDoc(doc(db, "users", uid), { fcmToken: token });
+        }
+      }
+    } catch (err) { console.warn("Notifications setup failed", err); }
+  };
 
   if (loading) return (
     <div className="min-h-screen bg-slate-950 flex items-center justify-center">

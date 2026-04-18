@@ -33,7 +33,7 @@ export default function Leaderboard() {
            </div>
         </div>
         <h1 className="text-5xl md:text-8xl font-black text-white italic tracking-tighter uppercase mb-6 leading-none">
-          Community <span className="text-blue-600">Leaderboard</span>
+          COMMUNITY <span className="text-blue-600">LEADERBOARD</span>
         </h1>
         <p className="text-slate-500 font-black text-[10px] uppercase tracking-[0.5em] italic opacity-60 max-w-lg mx-auto leading-relaxed">
           Recognizing our top skill traders based on community ratings and successful exchanges.

@@ -48,7 +48,7 @@ export default function Profile({ user }) {
     }
   };
 
-  const handleSave = async () => {
+  const handleSubmit = async () => {
     if (!noSkills && offering.length === 0) {
       alert("Please select at least 1 skill to offer!");
       return;
@@ -78,6 +78,7 @@ export default function Profile({ user }) {
         ratingCount: 0,
         createdAt: new Date()
       });
+      console.log("Profile created successfully, navigating to dashboard...");
       navigate("/dashboard");
     } catch (error) {
       console.error(error);
@@ -230,7 +231,7 @@ export default function Profile({ user }) {
             {/* Action Buttons */}
             <div className="pt-10 flex flex-col gap-6">
                <button 
-                 onClick={handleSave} 
+                 onClick={handleSubmit} 
                  disabled={saving}
                  className="w-full btn-primary h-20 flex items-center justify-center gap-4 text-sm font-black uppercase tracking-[0.3em] italic shadow-2xl shadow-blue-600/40"
                >
